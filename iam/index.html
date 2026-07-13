@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>권준형 | 데이터를 통해 미래의 문제를 해결하는 개발자</title>
+  <style>
+    /* --- 디자인 시스템 & 변수 정의 --- */
+    :root {
+      --bg-primary: #f8f9fa;       /* 메인 라이트 그레이 배경 */
+      --bg-secondary: #ffffff;     /* 카드 및 서브 섹션 흰색 배경 */
+      --text-primary: #1a1a1a;     /* 가독성이 높은 짙은 차콜 */
+      --text-secondary: #606060;   /* 서브 텍스트 회색 */
+      --accent-color: #2b2b2b;     /* 포인트 다크 그레이 */
+      --border-color: #e5e5e5;     /* 경계선 및 플레이스홀더 테두리 */
+      --transition-speed: 0.3s;    /* 인터랙션 전환 속도 */
+    }
+
+    /* --- 기본 초기화 및 글로벌 스타일 --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth; /* 부드러운 스크롤 */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* --- 레이아웃 & 컨테이너 --- */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* --- 네비게이션 바 (미니멀 디자인) --- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(248, 249, 250, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition-speed);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* --- 히어로 섹션 --- */
+    #hero {
+      min-height: 100vh;
+      padding-top: 140px;
+      justify-content: center;
+      background-color: var(--bg-primary);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      padding: 4px 12px;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      word-break: keep-all;
+    }
+
+    /* --- 버튼 스타일 --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all var(--transition-speed) ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: var(--bg-secondary);
+      border: 1px solid var(--accent-color);
+    }
+
+    .btn-primary:hover {
+      background-color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* --- 소개 (About) 섹션 --- */
+    #about {
+      background-color: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      position: relative;
+      letter-spacing: -0.01em;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* 프로필 이미지 플레이스홀더 */
+    .profile-placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #eef0f2;
+      border: 2px dashed var(--border-color);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      position: relative;
+    }
+
+    .profile-placeholder svg {
+      width: 64px;
+      height: 64px;
+      fill: none;
+      stroke: var(--text-secondary);
+      stroke-width: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .about-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      word-break: keep-all;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 12px;
+      display: flex;
+      font-size: 0.95rem;
+    }
+
+    .info-label {
+      width: 100px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .info-value {
+      color: var(--text-secondary);
+    }
+
+    /* --- 강점 섹션 --- */
+    #strengths {
+      background-color: var(--bg-primary);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--bg-secondary);
+      padding: 40px 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-speed) ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-icon-placeholder {
+      width: 50px;
+      height: 50px;
+      background-color: var(--bg-primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .card-icon-placeholder svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--text-primary);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      word-break: keep-all;
+    }
+
+    /* --- CTA 섹션 --- */
+    #cta {
+      background-color: var(--accent-color);
+      color: var(--bg-secondary);
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta-desc {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-bottom: 32px;
+    }
+
+    .cta-btn-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    /* --- 푸터 --- */
+    footer {
+      background-color: var(--bg-primary);
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    /* --- 반응형 레이아웃 미디어 쿼리 --- */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .profile-placeholder {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr; /* 세로 누적 */
+        gap: 20px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .cta-btn-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 280px;
+        margin: 0 auto;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 네비게이션 헤더 -->
+  <header>
+    <div class="nav-container">
+      <a href="#hero" class="logo">JUNHYUNG</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">SSAFY 16th</span>
+        <h1 class="hero-title">권준형</h1>
+        <p class="hero-desc">데이터를 통해 미래의 문제를 해결하는 개발자입니다. 복잡하게 얽혀 있는 정보 속에서 유의미한 가치를 발견하고, 견고한 프론트엔드 설계로 실질적인 해결책을 구현해냅니다.</p>
+        <div style="display: flex; gap: 16px;">
+          <!-- 상호작용: 부드러운 스크롤 타겟 설정 -->
+          <a href="#about" class="btn btn-primary" onclick="scrollToSection(event, '#about')">소개 더 보기</a>
+          <a href="#cta" class="btn btn-secondary" onclick="scrollToSection(event, '#cta')">인사 나누기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 소개(About) 섹션 -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <!-- 프로필 이미지 플레이스홀더 -->
+        <div class="profile-placeholder">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span>Profile Placeholder</span>
+        </div>
+        
+        <div class="about-text">
+          <h3>안녕하세요, 동료 여러분!</h3>
+          <p>싸피에서 여러분과 함께 몰입하고 성장할 준비가 되어 있는 권준형입니다. 우리 반 동료들의 멋진 프로젝트들이 실용적인 기술로 빛날 수 있도록 든든한 기술 파트너가 되고 싶습니다.</p>
+          <ul class="info-list">
+            <li>
+              <span class="info-label">이름</span>
+              <span class="info-value">권준형</span>
+            </li>
+            <li>
+              <span class="info-label">역할</span>
+              <span class="info-value">Data Analyst / Data Scientist</span>
+            </li>
+            <li>
+              <span class="info-label">관심 분야</span>
+              <span class="info-value">Web Standard, Data Visualization, UI/UX</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 강점 섹션 (모바일에서 세로로 쌓임) -->
+  <section id="strengths">
+    <div class="container">
+      <h2 class="section-title">Core Strengths</h2>
+      <div class="cards-grid">
+        <!-- 카드 1: 성장지향 -->
+        <div class="card">
+          <div class="card-icon-placeholder">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 15l-6-6-6 6" />
+            </svg>
+          </div>
+          <h3 class="card-title">성장지향</h3>
+          <p class="card-desc">멈춰 있는 지식은 경계합니다. 매일 쏟아져 나오는 웹 생태계의 트렌드를 기민하게 습득하고, 프로젝트 환경에 맞게 체득하는 적극적인 스터디 러너입니다.</p>
+        </div>
+
+        <!-- 카드 2: 꼼꼼함 -->
+        <div class="card">
+          <div class="card-icon-placeholder">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 11l3 3L22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+          </div>
+          <h3 class="card-title">꼼꼼함</h3>
+          <p class="card-desc">안전하고 결함 없는 코드를 위해 세세한 디테일을 챙깁니다. 엣지 케이스까지 고려한 디버깅 습관으로 팀 전체의 결과물 안정성을 크게 향상시킵니다.</p>
+        </div>
+
+        <!-- 카드 3: 협업지향 -->
+        <div class="card">
+          <div class="card-icon-placeholder">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="card-title">협업지향</h3>
+          <p class="card-desc">코드뿐만 아니라 사람 사이의 구조화된 커뮤니케이션을 선호합니다. 동료들의 관점을 유연하게 조율하여 갈등 없는 생산적인 프로젝트 경험을 만들어갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 섹션 -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-container">
+        <h2 class="cta-title">오늘부터 시작되는 뜨거운 여정</h2>
+        <p class="cta-desc">싸피에서 더 깊이 소통하고 의미 있는 무언가를 만들어갈 동료를 찾고 계신가요? 제 자리는 언제나 열려 있습니다.</p>
+        <div class="cta-btn-wrapper">
+          <button class="btn btn-secondary" style="background-color: #ffffff; color: #1a1a1a; border-color: #ffffff;" onclick="showContactMessage()">커피챗 나누기</button>
+        </div>
+        <div id="toast-message" style="display: none; margin-top: 20px; font-size: 0.95rem; font-weight: 500; opacity: 0; transition: opacity 0.5s ease; color: #ffffff;">
+          ☕ "자리로 직접 편하게 오셔서 커피 한잔 같이 해요!"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Kwon Junhyung. Built with pure HTML, CSS, and JS.</p>
+      <p style="opacity: 0.6; font-size: 0.8rem;">Designed for SSAFY Classmate Collaboration</p>
+    </div>
+  </footer>
+
+  <!-- 자바스크립트 상호작용 및 유틸리티 -->
+  <script>
+    // 클릭 시 타겟 섹션으로 부드러운 스크롤 구현 (기본 행위 방지 후 커스텀 처리)
+    function scrollToSection(event, targetSelector) {
+      event.preventDefault();
+      const targetElement = document.querySelector(targetSelector);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+
+    // 커피챗 클릭 시 토스트 메시지 등장 시나리오 (alert 사용 제한 극복을 위한 내장 알림창)
+    function showContactMessage() {
+      const toast = document.getElementById('toast-message');
+      
+      if (toast.style.display === 'none') {
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.opacity = '1';
+        }, 10);
+
+        // 4초 후에 다시 서서히 사라짐
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => {
+            toast.style.display = 'none';
+          }, 500);
+        }, 4000);
+      }
+    }
+  </script>
+</body>
+</html>
