@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>권준형 | 소개 (About)</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] line-height-[1.6] overflow-x-hidden">
+
+  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/90 backdrop-blur-[10px] border-b border-[#e5e5e5] z-[1000]">
+    <div class="flex justify-between items-center h-[70px] max-w-[1000px] my-0 mx-auto px-6">
+      <a href="index.html" class="text-[1.1rem] font-bold tracking-wider no-underline text-[#1a1a1a]">JUNHYUNG</a>
+      <nav class="flex gap-8 md:gap-4">
+        <a href="about.html" class="no-underline text-[#1a1a1a] text-[0.9rem] font-bold transition-colors duration-300">About</a>
+        <a href="strengths.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">Strengths</a>
+        <a href="contact.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about" class="min-h-screen pt-[140px] flex flex-col justify-center bg-[#ffffff] py-[100px] px-0 border-t border-b border-[#e5e5e5]">
+    <div class="max-w-[1000px] my-0 mx-auto px-6 w-full">
+      <h2 class="text-[2rem] font-bold mb-12 tracking-tight relative">About Me</h2>
+      
+      <div class="grid grid-cols-[1fr_1.2fr] md:grid-cols-1 gap-[60px] md:gap-10 items-center">
+        <div class="w-full aspect-square bg-[#eef0f2] border border-[#e5e5e5] rounded-xl overflow-hidden flex flex-col items-center justify-center max-w-full md:max-w-[320px] md:my-0 md:mx-auto">
+          <img src="iam_image.png" alt="권준형 프로필" class="w-full h-full object-cover object-[center_20%] block">
+        </div>
+
+        <div class="about-text">
+          <h3 class="text-[1.5rem] font-bold mb-4">데이터와 비즈니스를 연결하는 개발자</h3>
+          <p class="text-[#606060] mb-6 break-keep">
+            안녕하세요! 복잡한 데이터 속에서 가치를 찾아내고 이를 안정적인 서비스로 구현하는 것에 열정을 가진 개발자 권준형입니다. 
+            단순히 작동하는 코드를 넘어, 비즈니스의 문제를 해결하고 사용자에게 실질적인 편의를 제공하는 아키텍처를 설계하는 것을 목표로 합니다.
+          </p>
+          
+          <ul class="list-none p-0 m-0">
+            <li class="mb-3 flex text-[0.95rem]">
+              <span class="w-[100px] font-semibold text-[#1a1a1a]">소속</span>
+              <span class="text-[#606060]">SSAFY 16기</span>
+            </li>
+            <li class="mb-3 flex text-[0.95rem]">
+              <span class="w-[100px] font-semibold text-[#1a1a1a]">이메일</span>
+              <span class="text-[#606060]">monxpronx@naver.com</span>
+            </li>
+            <li class="mb-3 flex text-[0.95rem]">
+              <span class="w-[100px] font-semibold text-[#1a1a1a]">기술 스택</span>
+              <span class="text-[#606060]">Python / Java / SQL / Vue.js / Django</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#f8f9fa] border-t border-[#e5e5e5] py-10 px-0 text-center text-[0.85rem] text-[#606060]">
+    <div class="max-w-[1000px] my-0 mx-auto px-6">
+      <p class="mb-2">&copy; 2026 Kwon Junhyung. Built with pure HTML, CSS, and JS.</p>
+      <p class="opacity-60 text-[0.8rem]">Designed for SSAFY Classmate Collaboration</p>
+    </div>
+  </footer>
+</body>
+</html>
