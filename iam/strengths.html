@@ -5,56 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>권준형 | 강점 (Strengths)</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  </style>
 </head>
-<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] line-height-[1.6] overflow-x-hidden">
+<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] antialiased overflow-x-hidden">
 
-  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/90 backdrop-blur-[10px] border-b border-[#e5e5e5] z-[1000]">
-    <div class="flex justify-between items-center h-[70px] max-w-[1000px] my-0 mx-auto px-6">
-      <a href="index.html" class="text-[1.1rem] font-bold tracking-wider no-underline text-[#1a1a1a]">JUNHYUNG</a>
-      <nav class="flex gap-8 md:gap-4">
-        <a href="about.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">About</a>
-        <a href="strengths.html" class="no-underline text-[#1a1a1a] text-[0.9rem] font-bold transition-colors duration-300">Strengths</a>
-        <a href="contact.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">Contact</a>
+  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/75 backdrop-blur-md border-b border-black/[0.04] z-[1000]">
+    <div class="flex justify-between items-center h-[76px] max-w-[1100px] my-0 mx-auto px-8 md:px-6">
+      <a href="index.html" class="text-[1rem] font-bold tracking-[0.15em] no-underline text-[#1a1a1a] transition-opacity hover:opacity-70">JUNHYUNG</a>
+      <nav class="flex gap-10 md:gap-6">
+        <a href="about.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">About</a>
+        <a href="strengths.html" class="no-underline text-[#1a1a1a] text-[0.85rem] font-bold tracking-wide transition-colors duration-300">Strengths</a>
+        <a href="contact.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section id="strengths" class="min-h-screen pt-[140px] flex flex-col justify-center bg-[#f8f9fa] py-[100px] px-0">
-    <div class="max-w-[1000px] my-0 mx-auto px-6 w-full">
-      <h2 class="text-[2rem] font-bold mb-12 tracking-tight relative">Key Strengths</h2>
+  <section id="strengths" class="min-h-screen pt-[140px] flex flex-col justify-center bg-[#f8f9fa] py-[120px] px-0">
+    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6 w-full animate-fade-up">
+      <div class="mb-14">
+        <span class="text-[0.75rem] font-bold tracking-[0.2em] text-[#777777] uppercase block mb-2">Capability</span>
+        <h2 class="text-[2.25rem] font-black tracking-tight text-[#1a1a1a]">Key Strengths</h2>
+      </div>
       
-      <div class="grid grid-cols-3 md:grid-cols-1 gap-[30px] md:gap-5">
+      <div class="grid grid-cols-3 md:grid-cols-1 gap-[32px] md:gap-6">
         
-        <div class="bg-[#ffffff] p-10 md:p-[40px_30px] rounded-xl border border-[#e5e5e5] transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]">
-          <div class="w-[50px] h-[50px] bg-[#f8f9fa] rounded-lg flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-[#1a1a1a] stroke-[1.5] fill-none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 0 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-            </svg>
+        <div class="group bg-white p-9 md:p-8 rounded-2xl border border-black/[0.05] shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:border-black/[0.08]">
+          <div class="flex justify-between items-start mb-8">
+            <div class="w-[48px] h-[48px] bg-[#f8f9fa] rounded-xl flex items-center justify-center border border-black/[0.02] transition-colors duration-300 group-hover:bg-[#1a1a1a]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-[#1a1a1a] group-hover:stroke-white transition-colors duration-300 stroke-[1.5] fill-none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 0 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+              </svg>
+            </div>
+            <span class="text-[0.7rem] font-mono tracking-widest text-black/30 group-hover:text-black/60 uppercase transition-colors duration-300">Learning</span>
           </div>
-          <h3 class="text-[1.25rem] font-bold mb-3">지속적인 성장지향</h3>
-          <p class="text-[0.95rem] text-[#606060] break-keep leading-relaxed">
+          <h3 class="text-[1.3rem] font-extrabold text-[#1a1a1a] mb-4 tracking-tight">지속적인 성장지향</h3>
+          <p class="text-[0.92rem] text-[#555555] font-normal leading-[1.75] break-keep tracking-wide">
             새로운 기술을 배우고 빠르게 알아가는 과정 속에서 큰 즐거움을 느끼는 편입니다. 낯설거나 어려운 분야를 마주하더라도 꾸준히 탐구하고 공부하며, 이를 프로젝트에 직접 적용해 나가는 것을 핵심 가치로 삼고 있습니다. 단순히 개념을 아는 것에 만족하지 않고, 실제로 살아있는 프로젝트에 코드로 구현해 보며 스스로 발전하는 성장을 중요하게 생각합니다.
           </p>
         </div>
 
-        <div class="bg-[#ffffff] p-10 md:p-[40px_30px] rounded-xl border border-[#e5e5e5] transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]">
-          <div class="w-[50px] h-[50px] bg-[#f8f9fa] rounded-lg flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-[#1a1a1a] stroke-[1.5] fill-none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
-            </svg>
+        <div class="group bg-white p-9 md:p-8 rounded-2xl border border-black/[0.05] shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:border-black/[0.08]">
+          <div class="flex justify-between items-start mb-8">
+            <div class="w-[48px] h-[48px] bg-[#f8f9fa] rounded-xl flex items-center justify-center border border-black/[0.02] transition-colors duration-300 group-hover:bg-[#1a1a1a]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-[#1a1a1a] group-hover:stroke-white transition-colors duration-300 stroke-[1.5] fill-none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
+              </svg>
+            </div>
+            <span class="text-[0.7rem] font-mono tracking-widest text-black/30 group-hover:text-black/60 uppercase transition-colors duration-300">Detail</span>
           </div>
-          <h3 class="text-[1.25rem] font-bold mb-3">디테일을 챙기는 꼼꼼함</h3>
-          <p class="text-[0.95rem] text-[#606060] break-keep leading-relaxed">
+          <h3 class="text-[1.3rem] font-extrabold text-[#1a1a1a] mb-4 tracking-tight">디테일을 챙기는 꼼꼼함</h3>
+          <p class="text-[0.92rem] text-[#555555] font-normal leading-[1.75] break-keep tracking-wide">
             설계나 개발을 진행할 때 예외 상황과 같은 보이지 않는 작은 부분까지 놓치지 않으려고 치밀하게 노력하는 성향입니다. 단순한 기능 정상 동작을 넘어 실제 유저가 마주할 서비스의 안정성과 사용자 경험까지 깊이 있게 고민합니다. 사소한 디테일 하나가 곧 소프트웨어의 전체적인 완성도를 결정짓는다고 믿기에, 항상 끈기 있게 검토하고 다듬는 것을 선호합니다.
           </p>
         </div>
 
-        <div class="bg-[#ffffff] p-10 md:p-[40px_30px] rounded-xl border border-[#e5e5e5] transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]">
-          <div class="w-[50px] h-[50px] bg-[#f8f9fa] rounded-lg flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-[#1a1a1a] stroke-[1.5] fill-none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.336 9.336 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-            </svg>
+        <div class="group bg-white p-9 md:p-8 rounded-2xl border border-black/[0.05] shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:border-black/[0.08]">
+          <div class="flex justify-between items-start mb-8">
+            <div class="w-[48px] h-[48px] bg-[#f8f9fa] rounded-xl flex items-center justify-center border border-black/[0.02] transition-colors duration-300 group-hover:bg-[#1a1a1a]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-[#1a1a1a] group-hover:stroke-white transition-colors duration-300 stroke-[1.5] fill-none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.336 9.336 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+              </svg>
+            </div>
+            <span class="text-[0.7rem] font-mono tracking-widest text-black/30 group-hover:text-black/60 uppercase transition-colors duration-300">Communication</span>
           </div>
-          <h3 class="text-[1.25rem] font-bold mb-3">소통 중심의 협업지향</h3>
-          <p class="text-[0.95rem] text-[#606060] break-keep leading-relaxed">
-            프로젝트의 가장 빛나는 결과물은 언제나 팀원 간의 원활하고 투명한 소통에서 비롯된다고 생각합니다. 혼자 고민하기보다는 적극적으로 대화하며, 팀과 서비스에 진정으로 필요하다고 판단되는 의견은 정중하면서도 명
+          <h3 class="text-[1.3rem] font-extrabold text-[#1a1a1a] mb-4 tracking-tight">소통 중심의 협업지향</h3>
+          <p class="text-[0.92rem] text-[#555555] font-normal leading-[1.75] break-keep tracking-wide">
+            프로젝트의 가장 빛나는 결과물은 언제나 팀원 간의 원활하고 투명한 소통에서 비롯된다고 생각합니다. 혼자 고민하기보다는 적극적으로 대화하며, 팀과 서비스에 진정으로 필요하다고 판단되는 의견은 정중하면서도 명확하게 제안하는 편입니다. 서로의 지식을 나누고 배려하는 과정을 통해 팀원 전체가 함께 단단하게 성장하는 동반 협업을 언제나 지향하고 있습니다.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#f8f9fa] border-t border-black/[0.04] py-12 px-0 text-center text-[0.8rem] text-[#777777] tracking-wide">
+    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6">
+      <p class="mb-2">&copy; 2026 Kwon Junhyung. Crafted with absolute minimalism.</p>
+      <p class="opacity-50 text-[0.75rem]">Designed for SSAFY Classmate Collaboration</p>
+    </div>
+  </footer>
+</body>
+</html>

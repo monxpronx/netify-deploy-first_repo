@@ -5,40 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>권준형 | 연락처 (Contact)</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  </style>
 </head>
-<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] line-height-[1.6] overflow-x-hidden">
+<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] antialiased overflow-x-hidden">
 
-  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/90 backdrop-blur-[10px] border-b border-[#e5e5e5] z-[1000]">
-    <div class="flex justify-between items-center h-[70px] max-w-[1000px] my-0 mx-auto px-6">
-      <a href="index.html" class="text-[1.1rem] font-bold tracking-wider no-underline text-[#1a1a1a]">JUNHYUNG</a>
-      <nav class="flex gap-8 md:gap-4">
-        <a href="about.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">About</a>
-        <a href="strengths.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">Strengths</a>
-        <a href="contact.html" class="no-underline text-[#1a1a1a] text-[0.9rem] font-bold transition-colors duration-300">Contact</a>
+  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/75 backdrop-blur-md border-b border-black/[0.04] z-[1000]">
+    <div class="flex justify-between items-center h-[76px] max-w-[1100px] my-0 mx-auto px-8 md:px-6">
+      <a href="index.html" class="text-[1rem] font-bold tracking-[0.15em] no-underline text-[#1a1a1a] transition-opacity hover:opacity-70">JUNHYUNG</a>
+      <nav class="flex gap-10 md:gap-6">
+        <a href="about.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">About</a>
+        <a href="strengths.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">Strengths</a>
+        <a href="contact.html" class="no-underline text-[#1a1a1a] text-[0.85rem] font-bold tracking-wide transition-colors duration-300">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section id="cta" class="min-h-screen pt-[140px] flex flex-col justify-center bg-[#2b2b2b] text-[#ffffff] text-center py-20 px-0">
-    <div class="max-w-[600px] my-0 mx-auto px-6 w-full">
-      <h2 class="text-[2rem] font-bold mb-4 leading-snug">함께 성장하고,<br>의미 있는 프로젝트를 만들어갈 동료를 기다립니다.</h2>
-      <p class="text-[1.1rem] opacity-80 mb-8">가벼운 커피챗이나 프로젝트 이야기도 언제든 환영합니다.</p>
+  <section id="cta" class="relative min-h-screen pt-[140px] flex flex-col justify-center bg-[#2b2b2b] text-white text-center py-24 px-0 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.02),transparent)] pointer-events-none"></div>
+    <div class="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-[640px] my-0 mx-auto px-8 md:px-6 w-full relative z-10 animate-fade-in">
+      <span class="text-[0.75rem] font-bold tracking-[0.2em] text-white/40 uppercase block mb-3">Connection</span>
+      <h2 class="text-[2.25rem] font-black mb-6 leading-[1.35] tracking-tight">함께 성장하고,<br>의미 있는 프로젝트를 만들어갈 동료를 기다립니다.</h2>
+      <p class="text-[1.1rem] text-white/70 font-light tracking-wide mb-12">가벼운 커피챗이나 프로젝트 이야기도 언제든 환영합니다.</p>
       
-      <div class="flex justify-center gap-4 md:flex-col md:items-stretch md:max-w-[280px] md:my-0 md:mx-auto md:gap-3">
-        <a href="mailto:monxpronx@naver.com" class="inline-flex items-center justify-center px-8 py-4 text-[0.95rem] font-semibold no-underline rounded-lg transition-all duration-300 ease-in-out cursor-pointer bg-[#ffffff] text-[#1a1a1a] border border-[#ffffff] hover:bg-[#f8f9fa] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]">이메일 보내기</a>
-        <a href="#" onclick="showContactMessage(); return false;" class="inline-flex items-center justify-center px-8 py-4 text-[0.95rem] font-semibold no-underline rounded-lg transition-all duration-300 ease-in-out cursor-pointer bg-transparent text-[#ffffff] border border-[#ffffff] hover:bg-[#ffffff]/10 hover:-translate-y-0.5">커피챗 신청하기</a>
+      <div class="flex justify-center gap-4 md:flex-col md:items-stretch md:max-w-[300px] md:mx-auto md:gap-3">
+        <a href="mailto:monxpronx@naver.com" class="inline-flex items-center justify-center px-9 py-4 text-[0.9rem] font-semibold no-underline rounded-lg transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer bg-white text-[#1a1a1a] border border-white hover:bg-[#f8f9fa] hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">이메일 보내기</a>
+        <a href="#" onclick="showContactMessage(); return false;" class="inline-flex items-center justify-center px-9 py-4 text-[0.9rem] font-semibold no-underline rounded-lg transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer bg-transparent text-white border border-white/20 hover:border-white hover:bg-white/5 hover:-translate-y-1">커피챗 신청하기</a>
       </div>
     </div>
   </section>
 
-  <div id="toast-message" style="display: none;" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-[#ffffff] px-6 py-4 rounded-lg shadow-[0_4px_16px_rgba(0,0,0,0.2)] text-[0.95rem] font-medium z-[2000] transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none">
+  <div id="toast-message" style="display: none;" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-white px-6 py-4 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/5 text-[0.9rem] font-medium z-[2000] transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none tracking-wide">
     ☕ 커피챗 요청 알림이 전송되었습니다! 곧 연락드리겠습니다.
   </div>
 
-  <footer class="bg-[#f8f9fa] border-t border-[#e5e5e5] py-10 px-0 text-center text-[0.85rem] text-[#606060]">
-    <div class="max-w-[1000px] my-0 mx-auto px-6">
-      <p class="mb-2">&copy; 2026 Kwon Junhyung. Built with pure HTML, CSS, and JS.</p>
-      <p class="opacity-60 text-[0.8rem]">Designed for SSAFY Classmate Collaboration</p>
+  <footer class="bg-[#1f1f1f] border-t border-white/[0.03] py-12 px-0 text-center text-[0.8rem] text-white/40 tracking-wide">
+    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6">
+      <p class="mb-2">&copy; 2026 Kwon Junhyung. Crafted with absolute minimalism.</p>
+      <p class="text-white/20 text-[0.75rem]">Designed for SSAFY Classmate Collaboration</p>
     </div>
   </footer>
 

@@ -5,42 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>권준형 | 데이터를 통해 미래의 문제를 해결하는 개발자</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  </style>
 </head>
-<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] line-height-[1.6] overflow-x-hidden">
+<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] antialiased overflow-x-hidden">
 
-  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/90 backdrop-blur-[10px] border-b border-[#e5e5e5] z-[1000]">
-    <div class="flex justify-between items-center h-[70px] max-w-[1000px] my-0 mx-auto px-6">
-      <a href="index.html" class="text-[1.1rem] font-bold tracking-wider no-underline text-[#1a1a1a]">JUNHYUNG</a>
-      <nav class="flex gap-8 md:gap-4">
-        <a href="about.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">About</a>
-        <a href="strengths.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">Strengths</a>
-        <a href="contact.html" class="no-underline text-[#606060] text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#1a1a1a]">Contact</a>
+  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/75 backdrop-blur-md border-b border-black/[0.04] z-[1000] transition-all duration-300">
+    <div class="flex justify-between items-center h-[76px] max-w-[1100px] my-0 mx-auto px-8 md:px-6">
+      <a href="index.html" class="text-[1rem] font-bold tracking-[0.15em] no-underline text-[#1a1a1a] transition-opacity hover:opacity-70">JUNHYUNG</a>
+      <nav class="flex gap-10 md:gap-6">
+        <a href="about.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">About</a>
+        <a href="strengths.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">Strengths</a>
+        <a href="contact.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section id="hero" class="min-h-screen pt-0 flex flex-col justify-center bg-[#f8f9fa] py-[100px] px-0">
-    <div class="max-w-[1000px] my-0 mx-auto px-6 w-full -mt-16">
-      <div class="max-w-[720px]">
-        <span class="inline-block text-[0.85rem] font-semibold tracking-widest uppercase text-[#606060] mb-4 px-3 py-1 bg-black/5 rounded">SSAFY 16th</span>
-        <h1 class="text-[3rem] md:text-[2.2rem] font-extrabold leading-[1.25] tracking-tight mb-5">권준형</h1>
-        <p class="text-[1.15rem] text-[#606060] mb-10 break-keep">
-          데이터를 통해 미래의 문제를 해결하는 개발자입니다.<br><br>
+  <section id="hero" class="relative min-h-screen flex flex-col justify-center bg-[#f8f9fa] overflow-hidden py-[120px] px-0">
+    <div class="absolute top-1/4 right-[-10%] w-[600px] h-[600px] bg-gradient-to-tr from-black/[0.02] to-black/[0.05] rounded-full blur-[120px] pointer-events-none md:hidden"></div>
+    <div class="absolute bottom-1/4 right-[10%] w-[300px] h-[300px] bg-black/[0.015] rounded-full blur-[80px] pointer-events-none md:hidden"></div>
+
+    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6 w-full relative z-10 -mt-20 md:-mt-10">
+      <div class="max-w-[760px] animate-fade-in">
+        <span class="inline-flex items-center text-[0.75rem] font-bold tracking-[0.2em] uppercase text-[#1a1a1a] mb-6 px-3 py-1.5 bg-black/[0.04] rounded-md border border-black/[0.02]">SSAFY 16th</span>
+        <h1 class="text-[3.5rem] md:text-[2.5rem] font-black leading-[1.15] tracking-tight text-[#1a1a1a] mb-6">권준형</h1>
+        <p class="text-[1.2rem] md:text-[1.1rem] text-[#555555] font-normal leading-[1.75] mb-12 break-keep tracking-wide">
+          데이터를 통해 미래의 문제를 해결하는 개발자입니다.<br class="md:hidden"><br class="md:hidden">
           복잡하게 얽혀 있는 정보 속에서 유의미한 가치를 발견하고,<br>
           견고한 설계로 실질적인 해결책을 구현해냅니다.
         </p>
-        <div class="flex gap-4">
-          <a href="about.html" class="inline-flex items-center justify-center px-8 py-4 text-[0.95rem] font-semibold no-underline rounded-lg transition-all duration-300 ease-in-out cursor-pointer bg-[#2b2b2b] text-[#ffffff] border border-[#2b2b2b] hover:bg-black hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]">소개 더 보기</a>
-          <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 text-[0.95rem] font-semibold no-underline rounded-lg transition-all duration-300 ease-in-out cursor-pointer bg-transparent text-[#1a1a1a] border border-[#1a1a1a] hover:bg-black/5 hover:-translate-y-0.5">인사 나누기</a>
+        <div class="flex gap-4 sm:flex-col sm:items-stretch">
+          <a href="about.html" class="group inline-flex items-center justify-center px-8 py-4 text-[0.9rem] font-semibold no-underline rounded-lg transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer bg-[#1a1a1a] text-white border border-[#1a1a1a] hover:bg-black hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
+            소개 더 보기
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1 stroke-white fill-none stroke-[2]" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+          </a>
+          <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 text-[0.9rem] font-semibold no-underline rounded-lg transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer bg-white text-[#1a1a1a] border border-black/[0.08] hover:border-black hover:bg-black/[0.02] hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.03)]">인사 나누기</a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-[#f8f9fa] border-t border-[#e5e5e5] py-10 px-0 text-center text-[0.85rem] text-[#606060]">
-    <div class="max-w-[1000px] my-0 mx-auto px-6">
-      <p class="mb-2">&copy; 2026 Kwon Junhyung. Built with pure HTML, CSS, and JS.</p>
-      <p class="opacity-60 text-[0.8rem]">Designed for SSAFY Classmate Collaboration</p>
+  <footer class="bg-[#f8f9fa] border-t border-black/[0.04] py-12 px-0 text-center text-[0.8rem] text-[#777777] tracking-wide relative z-10">
+    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6">
+      <p class="mb-2">&copy; 2026 Kwon Junhyung. Crafted with absolute minimalism.</p>
+      <p class="opacity-50 text-[0.75rem]">Designed for SSAFY Classmate Collaboration</p>
     </div>
   </footer>
 </body>
