@@ -1,60 +1,99 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko" class="scroll-smooth select-none">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>권준형 | 데이터를 통해 미래의 문제를 해결하는 개발자</title>
+  <title>권준형 | 프리미엄 포트폴리오</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Selection & Scrollbar Custom */
+    ::selection { background-color: #111111; color: #ffffff; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f8f9fa; }
+    ::-webkit-scrollbar-thumb { background: #e5e5e5; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #111111; }
+
+    /* Grid Pattern Component */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
     }
-    .animate-fade-in { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    
+    /* Intersection Observer Init State */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal-left.active { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal-right.active { opacity: 1; transform: translateX(0); }
   </style>
 </head>
-<body class="bg-[#f8f9fa] text-[#1a1a1a] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,'Helvetica_Neue',Arial,sans-serif] antialiased overflow-x-hidden">
+<body class="bg-[#f8f9fa] text-[#111111] font-[-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,sans-serif] antialiased overflow-x-hidden">
 
-  <header class="fixed top-0 left-0 w-full bg-[#f8f9fa]/75 backdrop-blur-md border-b border-black/[0.04] z-[1000] transition-all duration-300">
-    <div class="flex justify-between items-center h-[76px] max-w-[1100px] my-0 mx-auto px-8 md:px-6">
-      <a href="index.html" class="text-[1rem] font-bold tracking-[0.15em] no-underline text-[#1a1a1a] transition-opacity hover:opacity-70">JUNHYUNG</a>
-      <nav class="flex gap-10 md:gap-6">
-        <a href="about.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">About</a>
-        <a href="strengths.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">Strengths</a>
-        <a href="contact.html" class="no-underline text-[#606060] text-[0.85rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#1a1a1a]">Contact</a>
+  <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[1100px] bg-white/70 backdrop-blur-xl border border-black/[0.04] rounded-2xl z-[1000] transition-all duration-300 shadow-[0_2px_20px_rgba(0,0,0,0.01)]">
+    <div class="flex justify-between items-center h-[64px] px-8 md:px-6">
+      <a href="index.html" class="text-[0.9rem] font-bold tracking-[0.2em] no-underline text-[#111111] relative group">
+        JUNHYUNG
+        <span class="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#111111] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <nav class="flex gap-8 md:gap-5">
+        <a href="about.html" class="no-underline text-black/50 text-[0.8rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#111111] relative group">About</a>
+        <a href="strengths.html" class="no-underline text-black/50 text-[0.8rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#111111] relative group">Strengths</a>
+        <a href="contact.html" class="no-underline text-black/50 text-[0.8rem] font-medium tracking-wide transition-colors duration-300 hover:text-[#111111] relative group">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section id="hero" class="relative min-h-screen flex flex-col justify-center bg-[#f8f9fa] overflow-hidden py-[120px] px-0">
-    <div class="absolute top-1/4 right-[-10%] w-[600px] h-[600px] bg-gradient-to-tr from-black/[0.02] to-black/[0.05] rounded-full blur-[120px] pointer-events-none md:hidden"></div>
-    <div class="absolute bottom-1/4 right-[10%] w-[300px] h-[300px] bg-black/[0.015] rounded-full blur-[80px] pointer-events-none md:hidden"></div>
-
-    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6 w-full relative z-10 -mt-20 md:-mt-10">
-      <div class="max-w-[760px] animate-fade-in">
-        <span class="inline-flex items-center text-[0.75rem] font-bold tracking-[0.2em] uppercase text-[#1a1a1a] mb-6 px-3 py-1.5 bg-black/[0.04] rounded-md border border-black/[0.02]">SSAFY 16th</span>
-        <h1 class="text-[3.5rem] md:text-[2.5rem] font-black leading-[1.15] tracking-tight text-[#1a1a1a] mb-6">권준형</h1>
-        <p class="text-[1.2rem] md:text-[1.1rem] text-[#555555] font-normal leading-[1.75] mb-12 break-keep tracking-wide">
-          데이터를 통해 미래의 문제를 해결하는 개발자입니다.<br class="md:hidden"><br class="md:hidden">
-          복잡하게 얽혀 있는 정보 속에서 유의미한 가치를 발견하고,<br>
-          견고한 설계로 실질적인 해결책을 구현해냅니다.
+  <section id="hero" class="relative min-h-screen w-full bg-[#f8f9fa] bg-grid-pattern flex items-center overflow-hidden pt-16">
+    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6 w-full grid grid-cols-2 md:grid-cols-1 gap-12 items-center relative z-10">
+      
+      <div class="reveal-left">
+        <span class="inline-flex items-center text-[0.7rem] font-bold tracking-[0.25em] uppercase text-[#111111] mb-6 px-3 py-1.5 bg-white border border-black/[0.04] rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
+          <span class="w-1.5 h-1.5 bg-black rounded-full mr-2 animate-pulse"></span>SSAFY 16th
+        </span>
+        <h1 class="text-[3.25rem] md:text-[2.5rem] font-black leading-[1.2] tracking-tight text-[#111111] mb-6 break-keep">
+          데이터를 통해<br><span class="text-black/40">가치를 만드는</span> 개발자
+        </h1>
+        <p class="text-[1.1rem] md:text-[1rem] text-black/60 font-normal leading-[1.75] mb-10 break-keep tracking-wide max-w-[460px]">
+          복잡한 데이터를 사용자에게 가치 있는 서비스로 연결하는 개발자를 목표로 합니다.
         </p>
-        <div class="flex gap-4 sm:flex-col sm:items-stretch">
-          <a href="about.html" class="group inline-flex items-center justify-center px-8 py-4 text-[0.9rem] font-semibold no-underline rounded-lg transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer bg-[#1a1a1a] text-white border border-[#1a1a1a] hover:bg-black hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
-            소개 더 보기
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1 stroke-white fill-none stroke-[2]" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        <div class="flex gap-4 sm:flex-col">
+          <a href="about.html" class="ripple-btn group inline-flex items-center justify-center px-7 py-3.5 text-[0.85rem] font-bold no-underline rounded-xl transition-all duration-400 cursor-pointer bg-[#111111] text-white border border-[#111111] hover:bg-black hover:shadow-[0_15px_30px_rgba(0,0,0,0.1)] hover:-translate-y-0.5">
+            About
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1.5 transition-transform duration-300 group-hover:translate-x-1 stroke-white fill-none stroke-[2]" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
           </a>
-          <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 text-[0.9rem] font-semibold no-underline rounded-lg transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer bg-white text-[#1a1a1a] border border-black/[0.08] hover:border-black hover:bg-black/[0.02] hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.03)]">인사 나누기</a>
+          <a href="#" class="ripple-btn inline-flex items-center justify-center px-7 py-3.5 text-[0.85rem] font-bold no-underline rounded-xl transition-all duration-400 cursor-pointer bg-white text-[#111111] border border-black/[0.08] hover:border-black hover:bg-black/[0.02] hover:-translate-y-0.5">
+            GitHub
+          </a>
         </div>
       </div>
+
+      <div class="relative flex justify-center items-center reveal-right md:mt-6">
+        <div class="absolute w-[400px] h-[400px] bg-black/[0.03] rounded-full blur-[80px] pointer-events-none -z-10 animate-pulse"></div>
+        <div class="w-full max-w-[380px] aspect-[4/5] bg-white border border-black/[0.05] rounded-[24px] p-4 shadow-[0_30px_60px_rgba(0,0,0,0.03)] overflow-hidden group">
+          <div class="w-full h-full rounded-[18px] overflow-hidden bg-[#eef0f2] relative">
+            <img src="iam_image.png" alt="권준형" class="w-full h-full object-cover block filter grayscale contrast-[1.02] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105">
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <footer class="bg-[#f8f9fa] border-t border-black/[0.04] py-12 px-0 text-center text-[0.8rem] text-[#777777] tracking-wide relative z-10">
-    <div class="max-w-[1100px] my-0 mx-auto px-8 md:px-6">
-      <p class="mb-2">&copy; 2026 Kwon Junhyung. Crafted with absolute minimalism.</p>
-      <p class="opacity-50 text-[0.75rem]">Designed for SSAFY Classmate Collaboration</p>
+  <footer class="bg-white border-t border-black/[0.03] py-12 text-center text-[0.75rem] text-black/40 tracking-widest relative z-10">
+    <div class="max-w-[1100px] my-0 mx-auto px-8">
+      <p>&copy; 2026 KWON JUNHYUNG. ALL RIGHTS RESERVED.</p>
     </div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
